@@ -5,9 +5,10 @@ start() ->
     dropbox:start(),
     mutex:start(),
     register(tester_process, self()),
-    loop("stringA", "stringB", 100),
+    loop("String1", "String2", 100),
     unregister(tester_process),
     mutex:stop(),
+    
     dropbox:stop().
 
 loop(_, _, 0) ->
